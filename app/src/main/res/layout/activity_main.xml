@@ -19,15 +19,32 @@
         android:text="Take a Photo with the Camera App"/>
 
     <ImageView
-        android:layout_below="@id/btn_take_photo"
         android:id="@+id/iv_display_photo"
         android:layout_width="300dp"
-        android:layout_height="300dp"/>
+        android:layout_height="300dp"
+        android:layout_below="@id/btn_take_photo"/>
 
     <Button
         android:id="@+id/btn_save_full_size_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save the Full-size Photo"
-        android:onClick="saveFullSizePhoto"/>
+        android:layout_below="@id/iv_display_photo"
+        android:onClick="saveFullSizePhoto"
+        android:text="Save the Full-size Photo"/>
+
+    <Button
+        android:id="@+id/btn_add_photo_to_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_save_full_size_photo"
+        android:onClick="addPhotoToGallery"
+        android:text="Add the Photo to a Gallery"/>
+
+    <Button
+        android:id="@+id/btn_decode_scaled_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_add_photo_to_gallery"
+        android:onClick="decodeScaledImage"
+        android:text="Decode a Scaled Image"/>
 </RelativeLayout>

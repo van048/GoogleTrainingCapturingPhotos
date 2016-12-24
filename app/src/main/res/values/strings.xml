@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GoogleTrainingCapturingPhotos</string>
+    <string name="take_a_photo_with_the_camera_app">Take a Photo with the Camera App</string>
+    <string name="save_the_full_size_photo">Save the Full-size Photo</string>
+    <string name="add_the_photo_to_a_gallery">Add the Photo to a Gallery</string>
+    <string name="decode_a_scaled_image">Decode a Scaled Image</string>
 </resources>

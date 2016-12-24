@@ -14,12 +14,12 @@ import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    static final int REQUEST_TAKE_PHOTO = 2;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int REQUEST_TAKE_PHOTO = 2;
     private ImageView mImageView;
     private String mCurrentPhotoPath;
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.iv_display_photo);
     }
 
-    public void takePhotoWithCameraApp(View view) {
+    public void takePhotoWithCameraApp(@SuppressWarnings("UnusedParameters") View view) {
         dispatchTakePictureIntent();
     }
 
@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        // TODO: 2016/12/24
+        String timeStamp = DateFormat.getDateTimeInstance().format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         return image;
     }
 
-    public void saveFullSizePhoto(View view) {
+    public void saveFullSizePhoto(@SuppressWarnings("UnusedParameters") View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void addPhotoToGallery(View view) {
+    public void addPhotoToGallery(@SuppressWarnings("UnusedParameters") View view) {
         galleryAddPic();
     }
 
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         this.sendBroadcast(mediaScanIntent);
     }
 
+    @SuppressWarnings("deprecation")
     private void setPic() {
         // Get the dimensions of the View
         int targetW = mImageView.getWidth();
@@ -115,18 +117,18 @@ public class MainActivity extends AppCompatActivity {
         int photoH = bmOptions.outHeight;
 
         // Determine how much to scale down the image
-        int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
 
         // Decode the image file into a Bitmap sized to fill the View
         bmOptions.inJustDecodeBounds = false;
         bmOptions.inSampleSize = scaleFactor;
-        bmOptions.inPurgeable = true; // TODO: 2016/12/24  
+        bmOptions.inPurgeable = true; // TODO: 2016/12/24
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
         mImageView.setImageBitmap(bitmap);
     }
 
-    public void decodeScaledImage(View view) {
+    public void decodeScaledImage(@SuppressWarnings("UnusedParameters") View view) {
         setPic();
     }
 }

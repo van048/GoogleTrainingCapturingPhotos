@@ -16,13 +16,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="takePhotoWithCameraApp"
-        android:text="Take a Photo with the Camera App"/>
+        android:text="@string/take_a_photo_with_the_camera_app"/>
 
     <ImageView
         android:id="@+id/iv_display_photo"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_below="@id/btn_take_photo"/>
+        android:layout_below="@id/btn_take_photo"
+        tools:ignore="ContentDescription"/>
 
     <Button
         android:id="@+id/btn_save_full_size_photo"
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_display_photo"
         android:onClick="saveFullSizePhoto"
-        android:text="Save the Full-size Photo"/>
+        android:text="@string/save_the_full_size_photo"/>
 
     <Button
         android:id="@+id/btn_add_photo_to_gallery"
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_save_full_size_photo"
         android:onClick="addPhotoToGallery"
-        android:text="Add the Photo to a Gallery"/>
+        android:text="@string/add_the_photo_to_a_gallery"/>
 
     <Button
         android:id="@+id/btn_decode_scaled_image"
@@ -46,5 +47,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_add_photo_to_gallery"
         android:onClick="decodeScaledImage"
-        android:text="Decode a Scaled Image"/>
+        android:text="@string/decode_a_scaled_image"/>
 </RelativeLayout>

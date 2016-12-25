@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class PhotosActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_TAKE_PHOTO = 2;
     private ImageView mImageView;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_photos);
 
         mImageView = (ImageView) findViewById(R.id.iv_display_photo);
     }
@@ -130,5 +130,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void decodeScaledImage(@SuppressWarnings("UnusedParameters") View view) {
         setPic();
+    }
+
+    public void goToVideo(@SuppressWarnings("UnusedParameters") View view) {
+        Intent intent = new Intent(this, VideosActivity.class);
+        startActivity(intent);
     }
 }

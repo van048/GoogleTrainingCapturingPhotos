@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cn.ben.googletrainingcapturingphotos.MainActivity">
+    tools:context="cn.ben.googletrainingcapturingphotos.PhotosActivity">
 
     <Button
         android:id="@+id/btn_take_photo"
@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/iv_display_photo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_below="@id/btn_take_photo"
         tools:ignore="ContentDescription"/>
 
@@ -48,4 +48,12 @@
         android:layout_below="@id/btn_add_photo_to_gallery"
         android:onClick="decodeScaledImage"
         android:text="@string/decode_a_scaled_image"/>
+
+    <Button
+        android:id="@+id/btn_go_to_recording_videos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_decode_scaled_image"
+        android:text="@string/recording_videos_simply"
+        android:onClick="goToVideo"/>
 </RelativeLayout>

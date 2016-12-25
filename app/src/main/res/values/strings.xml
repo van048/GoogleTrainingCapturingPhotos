@@ -4,4 +4,6 @@
     <string name="save_the_full_size_photo">Save the Full-size Photo</string>
     <string name="add_the_photo_to_a_gallery">Add the Photo to a Gallery</string>
     <string name="decode_a_scaled_image">Decode a Scaled Image</string>
+    <string name="recording_videos_simply">Recording Videos Simply</string>
+    <string name="record_a_video_with_a_camera_app">Record a Video with a Camera App</string>
 </resources>

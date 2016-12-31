@@ -11,6 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -95,7 +96,14 @@ public class PhotosActivity extends AppCompatActivity {
         galleryAddPic();
     }
 
+    // TODO: 2016/12/29 test
     private void galleryAddPic() {
+        if (mCurrentPhotoPath == null) {
+            Toast.makeText(this, "mCurrentPhotoPath null", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Note: If you saved your photo to the directory provided by getExternalFilesDir(), the media scanner cannot access the files because they are private to your app.
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         File f = new File(mCurrentPhotoPath);
         Uri contentUri = Uri.fromFile(f);
@@ -105,6 +113,11 @@ public class PhotosActivity extends AppCompatActivity {
 
     @SuppressWarnings("deprecation")
     private void setPic() {
+        if (mCurrentPhotoPath == null) {
+            Toast.makeText(this, "mCurrentPhotoPath null", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Get the dimensions of the View
         int targetW = mImageView.getWidth();
         int targetH = mImageView.getHeight();

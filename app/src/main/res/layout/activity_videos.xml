@@ -24,4 +24,12 @@
         android:layout_height="200dp"
         android:layout_below="@id/btn_record_video"/>
 
+    <Button
+        android:id="@+id/btn_control_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vv_display_video"
+        android:onClick="controlCamera"
+        android:text="@string/controlling_the_camera"/>
+
 </RelativeLayout>

@@ -6,4 +6,6 @@
     <string name="decode_a_scaled_image">Decode a Scaled Image</string>
     <string name="recording_videos_simply">Recording Videos Simply</string>
     <string name="record_a_video_with_a_camera_app">Record a Video with a Camera App</string>
+    <string name="capture">capture</string>
+    <string name="controlling_the_camera">Controlling the Camera</string>
 </resources>

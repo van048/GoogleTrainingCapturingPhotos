@@ -36,6 +36,11 @@ public class VideosActivity extends AppCompatActivity {
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
             Uri videoUri = intent.getData();
             mVideoView.setVideoURI(videoUri);
+            mVideoView.start();
         }
+    }
+
+    public void controlCamera(View view) {
+        startActivity(new Intent(this, Camera2Activity.class));
     }
 }

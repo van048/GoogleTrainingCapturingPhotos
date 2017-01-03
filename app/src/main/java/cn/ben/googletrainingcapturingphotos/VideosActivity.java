@@ -40,7 +40,7 @@ public class VideosActivity extends AppCompatActivity {
         }
     }
 
-    public void controlCamera(View view) {
+    public void controlCamera(@SuppressWarnings("UnusedParameters") View view) {
         startActivity(new Intent(this, Camera2Activity.class));
     }
 }
